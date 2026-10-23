@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IronPulse Fitness Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg">
+            <polyline class="pulse-line" points="0,10 14,10 19,2 24,18 29,6 33,14 37,10 64,10" />
+          </svg>
+        </div>
+        <div>
+          <h1>IronPulse</h1>
+          <p class="subtitle"><span class="dot" id="statusDot"></span><span id="statusLabel">connecting</span> · membership desk · local AI</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" id="voiceRepliesBtn" class="btn secondary icon-btn" aria-pressed="false"
+                title="Voice replies: also speak answers to typed messages">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+          <span class="label">Voice replies</span>
+        </button>
+        <button type="button" id="newSessionBtn" class="btn secondary">New session</button>
+      </div>
+    </header>
+
+    <main id="chat" class="chat" aria-live="polite"></main>
+
+    <footer class="composer">
+      <form id="form">
+        <textarea
+          id="input"
+          rows="1"
+          maxlength="1000"
+          aria-label="Message"
+          placeholder="Ask, or tap the mic and speak: plans, classes, bookings, trainers…"
+          autocomplete="off"
+        ></textarea>
+        <button type="button" id="micBtn" class="btn mic" aria-label="Speak" title="Tap and speak — it stops when you pause">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>
+        </button>
+        <button type="submit" id="sendBtn" class="btn primary">Send</button>
+      </form>
+      <p id="status" class="status">Connecting…</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

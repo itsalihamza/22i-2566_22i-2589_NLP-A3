@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.idea/
+.vscode/
+
+# Assignment 3: downloaded speech models (scripts/download_models.py), runtime data, generated test audio
+models/
+data/
+evaluation/audio/
